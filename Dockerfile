@@ -214,7 +214,8 @@ RUN set -eux; \
 
 COPY docker-php-ext-* /usr/local/bin/
 
-## Franken part start here
+## Franken part starts here
+#############################
 
 # sodium was built as a shared module (so that it can be replaced later if so desired), so let's enable it too (https://github.com/docker-library/php/issues/598)
 RUN docker-php-ext-enable sodium
@@ -294,10 +295,7 @@ RUN export ADDITIONAL_BUILD_FLAGS=''; \
         --output /usr/local/bin/frankenphp \
         --with github.com/dunglas/frankenphp=./ \
         --with github.com/dunglas/frankenphp/caddy=./caddy/ \
-        --with github.com/dunglas/caddy-cbrotli \
-        # Mercure and Vulcain are included in the official build, but feel free to remove them
-        --with github.com/dunglas/mercure/caddy \
-        --with github.com/dunglas/vulcain/caddy
+        --with github.com/dunglas/caddy-cbrotli
 
 ####################
 # FrankenPHP Final

@@ -80,3 +80,35 @@ GNU GENERAL PUBLIC LICENSE v3
 13. [Enable sodium extension](https://github.com/docker-library/php/issues/598)
 14. Copy `/usr/local/go` from `golang:1.25`
 15. Copy xcaddy from the caddy:builder image
+16. Install dependencies:
+  * libargon2-dev
+  * libcurl4-openssl-dev
+  * libonig-dev
+  * libreadline-dev
+  * libsodium-dev
+  * libsqlite3-dev
+  * libssl-dev
+  * libxml2-dev
+  * zlib1g-dev
+  * cmake
+  * git
+  * libbrotli-dev
+  * libcap2-bin
+  * mailcap
+17. Download and build e-dant/watcher for watching file changes
+18. Clone frankenphp project: https://github.com/php/frankenphp.git
+19. Build frankenphp with xcaddy
+20. Install composer from Composer's official Docker image
+21. Copy frankenphp caddyfiles into container /etc/frankenphp/
+22. Install dependencies:
+  * procps
+  * libstdc++6
+  * zip
+23. Install php extensions:
+  * opcache
+  * pcntl
+  * pdo_mysql
+  * pdo_pgsql
+  * redis
+  * zip
+24. Sets entrypoint, cmd and healthcheck.
