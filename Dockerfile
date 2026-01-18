@@ -214,11 +214,11 @@ RUN set -eux; \
 
 COPY docker-php-ext-* /usr/local/bin/
 
+## Franken part start here
+
 # sodium was built as a shared module (so that it can be replaced later if so desired), so let's enable it too (https://github.com/docker-library/php/issues/598)
 RUN docker-php-ext-enable sodium
 
-ARG BASE_OS_VERSION='trixie'
-ARG PHP_VERSION='8.5.2'
 ARG FRANKENPHP_VERSION='1.10.1'
 ARG GOLANG_VERSION='1.25'
 
