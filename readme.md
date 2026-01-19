@@ -112,3 +112,18 @@ GNU GENERAL PUBLIC LICENSE v3
   * redis
   * zip
 24. Sets entrypoint, cmd and healthcheck.
+
+
+## Image size concerns
+
+Frankenphp image `serversideup/php:frankenphp-trixie` size is 621MB:
+1. debian:13-slim (100MB)
+2. php:8.5-zts
+  * phpize dependencies (334MB)
+  * php tarball (14MB)
+  * php build dependencies (112MB)
+3. frankenphp
+  * composer (3MB)
+  * frankenphp (47MB)
+  * libwatcher (0.6MB)
+  * dependencies and php extensions (8MB)
